@@ -1,0 +1,53 @@
+
+
+{% block body %}
+
+    <div class="container mt-auto" >
+      <h1>Reporte de Productos 2022</h1>
+    </div>
+
+    <div class="container mt-5" >
+
+    
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Precio</th>
+
+            
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for product in productos %}
+              <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{product.code}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.brand}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.price}}</td>
+         
+                
+              </tr>
+
+
+              
+
+            {% endfor %}
+          
+          
+        </tbody>
+      </table>
+    </div>
+
+    
+
+{% endblock %}

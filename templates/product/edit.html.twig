@@ -1,0 +1,72 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row">
+
+        <h3 class="mt-5 mb-5" style="text-align:center ;">Formulario de Edición</h3>
+        
+        {% for message in app.flashes('notice') %}
+
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+
+        {% endfor %}
+        
+        <div class="col-md-6 offset-md-3">
+        
+               {{form_start(formProduct)}}
+
+                    <div class="mb-3 row">
+                    
+                         {{form_row(formProduct.code)}}
+                    </div>
+
+                    <div class="mb-3 row">
+                    
+                         {{form_row(formProduct.name)}}
+                    </div>
+
+                    <div class="mb-3 row">
+                         
+                         {{form_row(formProduct.description)}}
+                    </div>
+
+                    <div class="mb-3 row">
+                    
+                         {{form_row(formProduct.brand)}}
+                    </div>
+
+                    <div class="mb-3 row">
+                    
+                         {{form_row(formProduct.price)}}
+                    </div>
+
+     
+                    <div class="mb-3 row">
+                    
+                         {{form_row(formProduct.category,{'attr':{'class':'form-select'}})}}
+                    </div>
+               
+
+
+                    <div style="text-align:center ;">
+                         <button class="btn btn-primary mt-2 ">Editar</button>
+                         <a href="{{path('products')}}" class="btn btn-success mt-2 ">Regresar</a>
+                    </div>
+
+               
+               {{form_end(formProduct)}}
+       
+
+        </div>
+    </div>
+
+</div>
+
+
+    
+{% endblock %}

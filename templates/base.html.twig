@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Crud Productos{% endblock %}</title>
+        
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        {#% block stylesheets %}
+            <link type="text/css" rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+        {% endblock %#}
+        
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        
+    </head>
+
+
+    <!--nav-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{path('products')}}">Productos</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{{path('create')}}" >Nuevo Producto</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{path('email')}}">Enviar email</a>
+              </li>
+    
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <body>
+        {% block body %}
+        
+        
+        {% endblock %}
+    </body>
+
+        {#% block javascripts %}
+            <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        {% endblock %#}
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</html>
